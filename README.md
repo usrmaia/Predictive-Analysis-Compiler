@@ -11,7 +11,7 @@ Sabendo-se que seria utilizado **Tabela LL(1)** implementada sem auxílio de alg
 
 ## Uso
 1. Defina em [grammar](./grammar.py) sua gramática no formato "Tabela LL(1)";
-2. Em [util](./util.py) informe se há algum símbolo especial que [predictive_analytics](./predictive_analytics.py) deva considerar como símbolo terminal.
+2. Em [util](./util.py) informe seus símbolos terminais e a entrada para [predictive_analytics](./predictive_analytics.py).
 3. Interprete o código:
 ```
 python3 predictive_analytics.py
