@@ -1,9 +1,9 @@
 from stack import Stack
 from match_db import MatchDB as DB
 from util import TERMINALS, INPUT_STR 
-from grammar import table_ll1
+from grammar import TABLE_LL1
 
-class PredictiveAnalytics(DB):
+class PredictiveAnalysis(DB):
   def __init__(self, input_str, S="S"):
     super().__init__()
 
@@ -16,7 +16,7 @@ class PredictiveAnalytics(DB):
     self.stack.put("$")
     self.stack.put(S)
 
-  def PredictiveAnalytics(self):
+  def PredictiveAnalysis(self):
     while not self.stack.empty and self.stack.list[self.stack.top] != "$":
       top_input = self.input_str.list[self.input_str.top]
       top_stack = self.stack.list[self.stack.top]
@@ -39,7 +39,7 @@ class PredictiveAnalytics(DB):
     return symbol in TERMINALS
   
   def getTransition(self, top_stack, top_input):
-    return table_ll1.get(f"{top_stack}, {top_input}")
+    return TABLE_LL1.get(f"{top_stack}, {top_input}")
   
   def stackNewTransition(self, top_input, top_stack):
     to_stack = self.getTransition(top_stack, top_input)
@@ -57,5 +57,5 @@ class PredictiveAnalytics(DB):
     DB.insertInto(self)
     
 if __name__=="__main__":
-  pa = PredictiveAnalytics(INPUT_STR)
-  pa.PredictiveAnalytics()
+  pa = PredictiveAnalysis(INPUT_STR)
+  pa.PredictiveAnalysis()

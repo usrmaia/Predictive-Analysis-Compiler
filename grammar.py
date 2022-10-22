@@ -11,7 +11,7 @@ seguidores(S): {$}
 seguidores(A): {a, 1}
 seguidores(B): {$}
 """
-table_ll1 = {
+TABLE_LL1 = {
   "S, 0": ["0", "A", "1"],
   "S, b": ["B"], 
   "A, 1": ["_"],
